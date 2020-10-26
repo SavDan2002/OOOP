@@ -5,7 +5,6 @@
 #include <string>
 #include <map>
 #include <iterator>
-#include <list>
 
 class PrintCSVFile {
 private:
@@ -13,7 +12,6 @@ private:
     std::map <std::string, int> _wordsMap;
     std::multimap <int, std::string, std::greater<int>> _wordsMultimap;
 public:
-    //bool _isLetterOrNumber (char symbol);
     void _readInput (const std::string& inputName);
     void _createMultimap ();
     void _printCSVFile (std::string outputName);
