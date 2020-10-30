@@ -17,5 +17,4 @@ public:
     void printCSVFile (std::string outputName);
 };
 
-
 #endif //LAB0B_PRINTCSVFILE_H
