@@ -1,4 +1,4 @@
-#include "module1.h"
+#include "PrintCSVFile.h"
 
 bool isLetterOrNumber (char symbol){
     if (symbol >= 'A' && symbol <= 'Z' ||
@@ -11,17 +11,17 @@ bool isLetterOrNumber (char symbol){
     }
 }
 
-void PrintCSVFile::_readInput (const std::string& inputName){
+void PrintCSVFile::readInput (const std::string& inputName){
     std::ifstream fin(inputName);
     if (!fin.is_open()) {
-        throw "The file cannot be opened or created";
+        throw std::logic_error("The file cannot be opened or created");
     }
     std::string buffer;
     while (!fin.eof()) {
         getline (fin, buffer);
         std::string word;
         for (char i : buffer){
-            if (isLetterOrNumber(i) && i != '\0'){  // && !buffer.eof();
+            if (isLetterOrNumber(i) && i != '\0'){
                 word += i;
                 continue;
             }
@@ -35,7 +35,7 @@ void PrintCSVFile::_readInput (const std::string& inputName){
     fin.close();
 }
 
-void PrintCSVFile::_createMultimap (){
+void PrintCSVFile::createMultimap (){
     std::map <std::string, int> :: iterator mapIterator = _wordsMap.begin();
     for (int i = 0; i < _wordsMap.size(); ++mapIterator, ++i) {
         _wordsMultimap.insert(make_pair(mapIterator->second, mapIterator->first));
@@ -43,11 +43,11 @@ void PrintCSVFile::_createMultimap (){
     _wordsMap.clear();
 }
 
-void PrintCSVFile::_printCSVFile (std::string outputName){
+void PrintCSVFile::printCSVFile (std::string outputName){
     std::multimap <int, std::string> :: iterator multimapIterator = _wordsMultimap.begin();
     std::ofstream fout(outputName);
     if (!fout.is_open()) {
-        throw "The file cannot be opened or created";
+        throw std::logic_error("The file cannot be opened or created");
     }
     while (multimapIterator != _wordsMultimap.end()) {
         fout << multimapIterator->second << ", " << multimapIterator->first << ", "

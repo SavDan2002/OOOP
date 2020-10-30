@@ -1,5 +1,5 @@
-#ifndef LAB0B_MODULE1_H
-#define LAB0B_MODULE1_H
+#ifndef LAB0B_PRINTCSVFILE_H
+#define LAB0B_PRINTCSVFILE_H
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -12,10 +12,10 @@ private:
     std::map <std::string, int> _wordsMap;
     std::multimap <int, std::string, std::greater<int>> _wordsMultimap;
 public:
-    void _readInput (const std::string& inputName);
-    void _createMultimap ();
-    void _printCSVFile (std::string outputName);
+    void readInput (const std::string& inputName);
+    void createMultimap ();
+    void printCSVFile (std::string outputName);
 };
 
 
-#endif //LAB0B_MODULE1_H
+#endif //LAB0B_PRINTCSVFILE_H

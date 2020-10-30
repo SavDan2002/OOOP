@@ -1,16 +1,20 @@
-#include "module1.h"
+#include "PrintCSVFile.h"
 
 int main(int argc, char** argv) {
     PrintCSVFile CSVFile;
-    try {
-        CSVFile._readInput (argv[1]);
-        //CSVFile._readInput ("input.txt");
-        CSVFile._createMultimap ();
-        CSVFile._printCSVFile (argv[2]);
-        //CSVFile._printCSVFile ("output.csv");
+    if (argc != 3){
+        std::cout << "bad input" << std::endl;
+        return 0;
     }
-    catch (char* exception) {
-        std::cout << exception << std::endl;
+    try {
+        CSVFile.readInput(argv[1]);
+        //CSVFile.readInput ("input.txt");
+        CSVFile.createMultimap();
+        CSVFile.printCSVFile(argv[2]);
+        //CSVFile.printCSVFile ("output.csv");
+    }
+    catch (std::logic_error &ex) {
+        std::cerr << ex.what() << std::endl;
     }
     return 0;
 }
