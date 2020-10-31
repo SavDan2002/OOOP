@@ -11,9 +11,9 @@ private:
     int _wordsCounter;
     std::map <std::string, int> _wordsMap;
     std::multimap <int, std::string, std::greater<int>> _wordsMultimap;
+    void createMultimap ();
 public:
     void readInput (const std::string& inputName);
-    void createMultimap ();
     void printCSVFile (std::string outputName);
 };
 

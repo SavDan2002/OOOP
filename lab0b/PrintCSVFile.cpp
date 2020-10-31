@@ -44,6 +44,7 @@ void PrintCSVFile::createMultimap (){
 }
 
 void PrintCSVFile::printCSVFile (std::string outputName){
+    createMultimap ();
     std::multimap <int, std::string> :: iterator multimapIterator = _wordsMultimap.begin();
     std::ofstream fout(outputName);
     if (!fout.is_open()) {
@@ -56,4 +57,3 @@ void PrintCSVFile::printCSVFile (std::string outputName){
     }
     _wordsMultimap.clear();
 }
-
