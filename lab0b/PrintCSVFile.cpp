@@ -57,3 +57,4 @@ void PrintCSVFile::printCSVFile (std::string outputName){
     }
     _wordsMultimap.clear();
 }
+
