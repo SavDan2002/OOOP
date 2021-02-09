@@ -24,5 +24,4 @@ public:
 
     ~Calculator();
 };
-
 #endif

@@ -46,7 +46,7 @@ void Calculator::calculate() {
         }
         OperationFactory &factory = OperationFactory::getInstance();
         try {
-            IOperationMaker &operatorMaker = factory.getOperatorMaker(arguments.front());
+            IOperationMaker &operatorMaker = factory.getOperationMaker(arguments.front());
             std::unique_ptr<IOperation> operation(operatorMaker.create());
             arguments.pop_front();
             operation->calculate(arguments, stack, variables, fout);

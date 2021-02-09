@@ -14,5 +14,4 @@ public:
 
     virtual ~IOperation() = default;
 };
-
 #endif

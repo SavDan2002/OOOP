@@ -8,5 +8,4 @@ class IOperationMaker {
 public:
     virtual IOperation *create() = 0;
 };
-
 #endif

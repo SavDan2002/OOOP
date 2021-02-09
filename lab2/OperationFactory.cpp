@@ -11,7 +11,7 @@ void OperationFactory::registerMaker(const std::string &name, IOperationMaker *o
     operations[name] = operatorMaker;
 }
 
-IOperationMaker &OperationFactory::getOperatorMaker(const std::string &name) {
+IOperationMaker &OperationFactory::getOperationMaker(const std::string &name) {
     if (operations.find(name) != operations.end()) {
         return *operations[name];
     }

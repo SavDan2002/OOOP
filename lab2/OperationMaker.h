@@ -23,5 +23,4 @@ template<class T>
 OperationMaker<T>::OperationMaker(const std::string &str) {
     OperationFactory::getInstance().registerMaker(str, this);
 }
-
 #endif

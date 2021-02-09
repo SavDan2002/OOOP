@@ -64,4 +64,4 @@ public:
                    std::ofstream *fout) override;
 };
 
-#endif //LAB2_OPERATIONS_H
+#endif

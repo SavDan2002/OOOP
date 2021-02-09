@@ -17,7 +17,7 @@ public:
 
     void registerMaker(const std::string &name, IOperationMaker *operatorMaker);
 
-    IOperationMaker &getOperatorMaker(const std::string &name);
+    IOperationMaker &getOperationMaker(const std::string &name);
 };
 
 #endif

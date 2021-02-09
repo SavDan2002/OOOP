@@ -12,6 +12,7 @@ namespace {
     OperationMaker<Define> define("DEFINE");
 }
 
+
 void Pop::calculate(std::list<std::string> arguments, std::list<double> &stack, std::map<std::string, double> &variables,
                std::ofstream *fout) {
     if (arguments.size() > 0) {
