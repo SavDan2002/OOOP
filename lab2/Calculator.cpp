@@ -20,7 +20,10 @@ std::list<std::string> getString(std::string &str) {
     return result;
 }
 
-Calculator::Calculator() : fin(nullptr), fout(nullptr) {}
+Calculator::Calculator(){
+    fin = nullptr;
+    fout = nullptr;
+}
 
 Calculator::Calculator(const std::string &in, const std::string &out) {
     fin = new std::ifstream(in);
@@ -50,7 +53,6 @@ void Calculator::calculate() {
         }
         catch (std::logic_error &ex) {
             std::cerr << "Error: " << ex.what() << std::endl;
-            throw;
         }
     }
 }
